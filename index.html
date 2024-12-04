@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-55V1E709SK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-55V1E709SK');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Closed-Loop Supervised Fine-Tuning of Tokenized Traffic Models.">
+  <meta name="keywords"
+    content="Traffic Simulation, Imitation Learning, Autonomous Driving, Closed-Loop Fine-Tuning, Next-Token Prediction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CAT-K</title>
+  <link rel="icon" href="static/images/catk_emoji.png" sizes="32x32" type="image/png">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/script.js"></script>
+
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Closed-Loop Supervised Fine-Tuning of Tokenized Traffic Models</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://zhejz.github.io/">Zhejun Zhang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://karkus.tilda.ws/">Peter Karkus</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://maximilianigl.com/">Maximilian
+                  Igl</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://wenhao.pub/">Wenhao Ding</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://research.nvidia.com/labs/avg/author/yuxiao-chen/">Yuxiao Chen</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.borisivanovic.com/">Boris Ivanovic</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://web.stanford.edu/~pavone/">Marco Pavone</a><sup>1,2</sup></span>
+            </div>
+
+            <!-- affiliations -->
+            <div class="subtitle is-size-5">
+              <!-- <div class="is-size-5 publication-authors"> -->
+              <sup>1</sup> NVIDIA &nbsp;
+              <sup>2</sup> Stanford University &nbsp;
+            </div>
+
+            <!-- TODO: update paper and video link once upload -->
+            <div class="column has-text-centered">
+              <!-- <div class="publication-links"> -->
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2403.20309.pdf"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=fxf_ypd7eD8"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/NVlabs" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Demo Link. -->
+              <!-- <span class="link-block">
+                <a href="https://huggingface.co/spaces/kairunwen/InstantSplat"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span>🤗 Demo</span>
+                </a>
+              </span> -->
+            </div>
+
+
+            <!-- Video Link. -->
+            <!-- <span class="link-block">
+                  <a href="https://youtu.be/470hul75bSM" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a> -->
+            </span>
+            <!-- Code Link. -->
+            <!-- <span class="link-block">
+                  <a href="https://github.com/VITA-Group/Instantsplat"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class=" carousel results-carousel">
+          <div class="item item-highlight1">
+            <video poster="" id="highlight1" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/highlights/highlight_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-highlight2">
+            <video poster="" id="highlight2" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/highlights/highlight_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-highlight3">
+            <video poster="" id="highlight3" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/highlights/highlight_3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-highlight4">
+            <video poster="" id="highlight4" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/highlights/highlight_4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-highlight5">
+            <video poster="" id="highlight5" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/highlights/highlight_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-highlight6">
+            <video poster="" id="highlight6" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/highlights/highlight_6.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-highlight7">
+            <video poster="" id="highlight7" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/highlights/highlight_7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-highlight8">
+            <video poster="" id="highlight8" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/highlights/highlight_8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-highlight9">
+            <video poster="" id="highlight9" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/highlights/highlight_9.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <p>Highlights of interesting behaviors generated by the SMART-tiny model fine-tuned with our Closes Among Top-K
+          (<strong>CAT-K</strong> <img src="static/images/catk_emoji.png" alt="emoji"
+            style="height:2em; vertical-align: middle; margin: 0; padding: 0;">) rollout.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Traffic simulation aims to learn a policy for traffic agents that, when unrolled in closed-loop,
+              faithfully recovers the joint distribution of trajectories observed in the real world. Inspired by large
+              language models, tokenized multi-agent policies have recently become the state-of-the-art in traffic
+              simulation. However, they are typically trained through open-loop behavior cloning, and thus suffer from
+              covariate shift when executed in closed-loop during simulation. In this work, we present Closest Among
+              Top-K (CAT-K) rollouts, a simple yet effective closed-loop fine-tuning strategy to mitigate covariate
+              shift. CAT-K fine-tuning only requires existing trajectory data, without reinforcement learning or
+              generative adversarial imitation. Concretely, CAT-K fine-tuning enables a small 7M-parameter tokenized
+              traffic simulation policy to outperform a 102M-parameter model from the same model family, achieving the
+              top spot on the Waymo Sim Agent Challenge <a
+                href="https://waymo.com/open/challenges/2024/sim-agents/">leaderboard</a> at
+              the time of submission. The code is available at <a href="https://github.com/NVlabs">this https URL</a>.
+
+            </p>
+
+
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+      <!-- <div class="column is-four-fifths"></div>
+      <div class="has-text-centered">
+        <h2 class="title is-3">Video</h2>
+        <video controls>
+          <source src="static/videos/demo1.mp4" type="video/mp4">
+          Your browser does not support the video.
+        </video>
+      </div> -->
+      <!-- The following is the way to insert through link -->
+      <!-- <div class="publication-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/470hul75bSM?si=7F9NL8zWbU9GtqHb"
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+         encrypted-media; " allowfullscreen></iframe> -->
+    </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method Overview</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/catk_banner.png">
+            <p><strong>Closest Among Top-K (CAT-K) Rollouts</strong> unroll the policy during fine-tuning in a way that
+              visited states remain close to the ground-truth (GT). At each time step, CAT-K first takes the top-K most
+              likely action tokens according to the policy, then chooses the one leading to the state closest to the GT.
+              As a result, CAT-K rollouts follow the mode of the GT (e.g., turning left), while random or top-K rollouts
+              can lead to large deviations (e.g., going straight or right). Since the policy is essentially trained to
+              minimize the distance between the rollout states and the GT states, the GT-based supervision remains
+              effective for CAT-K rollouts, but not for random or top-K rollouts.</p>
+
+          </div>
+        </div>
+      </div>
+      <!--/ Concurrent Work. -->
+
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Implementation</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/implementation.png">
+            <p><strong>Schematic comparison of CAT-K rollout, top-K sampling, and data augmentation techniques of <a
+                  href="https://arxiv.org/abs/2312.04535">Trajeglish</a>
+                and <a href="https://arxiv.org/abs/2405.15677">SMART</a>.</strong> In this example, the token vocabulary
+              has a size of 5. We rollout three
+              steps from t = 0 to t = 3. For CAT-K rollout and top-K sampling, the top-K is w.r.t the probabilities p of
+              tokens predicted by the policy. For the data augmentations used by Trajeglish and SMART, the policy is
+              unavailable, and the top-K selection is based on the negative distances between tokens and GT.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Simulation Results</h2>
+          <div class="content has-text-justified">
+
+            <figure>
+              <video controls>
+                <source src="static/videos/parking_lot.mp4" type="video/mp4">
+                Your browser does not support the video.
+              </video>
+              <figcaption> <strong>Parking Lot: </strong> The busy parking lot scenario shown in the main paper.
+              </figcaption>
+            </figure>
+            <!-- <div class="column is-four-fifths"></div> -->
+            <figure>
+              <video controls>
+                <source src="static/videos/ped_cyc.mp4" type="video/mp4">
+                Your browser does not support the video.
+              </video>
+              <figcaption> <strong>Pedestrians and Cyclists: </strong> Interesting behaviors for pedestrians and
+                cyclists.
+              </figcaption>
+            </figure>
+            <!-- <div class="column is-four-fifths"></div> -->
+            <figure>
+              <video controls>
+                <source src="static/videos/lane_changing.mp4" type="video/mp4">
+                Your browser does not support the video.
+              </video>
+              <figcaption> <strong>Lane Changing: </strong> Lane-changing scenario involving interactions between
+                multiple agents.
+              </figcaption>
+            </figure>
+            <!-- <div class="column is-four-fifths"></div> -->
+            <figure>
+              <video controls>
+                <source src="static/videos/bc_compounding_error.mp4" type="video/mp4">
+                Your browser does not support the video.
+              </video>
+              <figcaption> <strong>Compounding Errors Suffered by BC Policies: </strong> This video provides a
+                real-world
+                example of covariate shift, demonstrating how the BC policy suffers from compounding errors.
+              </figcaption>
+            </figure>
+            <!-- <div class="column is-four-fifths"></div> -->
+            <figure>
+              <video controls>
+                <source src="static/videos/more_behaviors.mp4" type="video/mp4">
+                Your browser does not support the video.
+              </video>
+              <figcaption> <strong>More Behaviors: </strong> If you have time, enjoy additional interesting behaviors
+                generated by
+                our model. These include exiting parking lots, making U-turns, stopping at stop signs, obeying traffic
+                lights, near-accident scenarios, and more.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Needs update
+          </p>
+         
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section> -->
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+
+      <pre><code>@article{zhang2024closed,
+    title={Closed-Loop Supervised Fine-Tuning of Tokenized Traffic Models}, 
+    author={Zhang, Zhejun and Karkus, Peter and Igl, Maximilian and Ding, Wenhao and Chen, Yuxiao and Ivanovic, Boris and Pavone, Marco},
+    journal={arXiv preprint arXiv:2412.xxxxx},
+    year={2024}
+}
+</code></pre>
+
+    </div>
+  </section>
+
+  <!-- TODO: update the arxiv link and github -->
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <!-- <a class="icon-link" href="">
+          <i class="fas fa-file-pdf"></i>
+        </a> -->
+        <!-- <a class="icon-link" href="" class="external-link" disabled>
+          <i class="fab fa-github"></i> -->
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              We thank the authors of
+              We thank the authors of <a href="https://nerfies.github.io/">Nerfies</a> that kindly open sourced the
+              template of this website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
